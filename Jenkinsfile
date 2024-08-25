@@ -1,4 +1,5 @@
 pipeline{
+    agent any
     stages{
         stage('Build'){
             steps{
@@ -26,7 +27,7 @@ pipeline{
                 echo "Example: SonarQube"
             }
         }
-        stages('Security Scan'){
+        stage('Security Scan'){
             steps{
                 echo "Perform a secuirty scan on the code"
                 echo "Example: Jenkins Security Scan"
@@ -40,13 +41,13 @@ pipeline{
                 }
             }
         }
-        stages('Deploy to Staging'){
+        stage('Deploy to Staging'){
             steps{
                 echo "Deploy the application to a staging server"
                 echo "Example: AWS EC2 Instane"
             }
         }
-        stages('Integration Tests on Staging'){
+        stage('Integration Tests on Staging'){
             steps{
                 echo "Run intergration tests on the staging environment"
                 echo "Example: Citrus"
@@ -60,7 +61,7 @@ pipeline{
                 }
             }
         }
-        stages('Deploy to Production'){
+        stage('Deploy to Production'){
             steps{
                 echo "Deploy the application to a production server"
                 echo "Example: AWS EC2 Instance"
