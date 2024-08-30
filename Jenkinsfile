@@ -65,6 +65,7 @@ pipeline{
             steps{
                 echo "Deploy the application to a production server"
                 echo "Example: AWS EC2 Instance"
+                echo "update"
             }
         }
     }
